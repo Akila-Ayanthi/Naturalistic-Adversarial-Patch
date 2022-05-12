@@ -270,7 +270,7 @@ for i, imm in tqdm(enumerate(source_data), desc=f'Output video ',total=nframes):
     if(model_name == "yolov2"):
         max_prob_obj_cls, overlap_score, bboxes = detector.detect(input_imgs=imm_tensor, cls_id_attacked=cls_id_attacked, with_bbox=True)
     if(model_name == "fasterrcnn"):
-        max_prob, max_prob, bboxes = fasterrcnn(tensor_image_inputs=imm_tensor, device=device, cls_id_attacked=cls_id_attacked, threshold=0.5)
+        max_prob, max_prob, bboxes = FasterrcnnResnet50(tensor_image_inputs=imm_tensor, device=device, cls_id_attacked=cls_id_attacked, threshold=0.5)
 
     # add patch
     # get bbox label.
