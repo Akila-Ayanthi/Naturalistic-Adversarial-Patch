@@ -239,7 +239,7 @@ if(model_name == "yolov4"):
     detector = detectorYolov4
 if(model_name == "fasterrcnn"):
     # just use fasterrcnn directly
-    detector = None
+    detector = FasterrcnnResnet50()
 
 
 ### -----------------------------------------------------------  Output Video  ---------------------------------------------------------------------- ###
@@ -270,8 +270,7 @@ for i, imm in tqdm(enumerate(source_data), desc=f'Output video ',total=nframes):
     if(model_name == "yolov2"):
         max_prob_obj_cls, overlap_score, bboxes = detector.detect(input_imgs=imm_tensor, cls_id_attacked=cls_id_attacked, with_bbox=True)
     if(model_name == "fasterrcnn"):
-        fasterrcnn = FasterrcnnResnet50()
-        max_prob, bboxes = fasterrcnn.detect(tensor_image_inputs=imm_tensor)
+        max_prob, bboxes = detector.detect(tensor_image_inputs=imm_tensor)
 
     # add patch
     # get bbox label.
