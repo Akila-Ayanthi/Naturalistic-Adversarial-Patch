@@ -1,3 +1,4 @@
+from genericpath import exists
 import numpy as np
 import os
 import sys
@@ -205,7 +206,8 @@ print('Finish reading images in %f seconds.' % (finish_r - start_r))
 
 for path, subdirs, files in os.walk(source_folder):
     for subdir in subdirs:
-        os.makedirs(output_folder+subdir)
+        if not exists:
+            os.makedirs(output_folder+subdir)
 
 
 ### -----------------------------------------------------------  Patch  Image  ---------------------------------------------------------------------- ###
@@ -405,8 +407,7 @@ for i, imm in tqdm(enumerate(source_data), desc=f'Output video ',total=nframes):
     # output data
     if(enable_output_data):
         # save clear imgs
-        print(iname)
-        output_path = str(output_imgs_foler)+'%s.png' % (iname)
+        output_path = '%s.png' % (iname)
         save_image(img_output, output_path)
         # save bbox
         output_path = str(output_labels_foler)+'%s.txt' % (iname)
