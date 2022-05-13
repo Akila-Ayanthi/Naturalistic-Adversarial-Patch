@@ -206,8 +206,7 @@ print('Finish reading images in %f seconds.' % (finish_r - start_r))
 
 for path, subdirs, files in os.walk(source_folder):
     for subdir in subdirs:
-        if not exists:
-            os.makedirs(output_folder+subdir)
+        os.makedirs(output_folder+subdir)
 
 
 ### -----------------------------------------------------------  Patch  Image  ---------------------------------------------------------------------- ###
