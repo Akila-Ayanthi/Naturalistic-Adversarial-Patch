@@ -56,7 +56,7 @@ enable_projection          = False
 enable_rectOccluding       = False 
 enable_blurred             = False 
 # output images with bbox
-enable_with_bbox           = True            # outputs with bbox 
+enable_with_bbox           = False            # outputs with bbox 
 # other setting
 enable_show_plt            = False           # check output images during testing by human
 enable_no_random           = True            # NOT randon patch "light and shadow changes"
@@ -413,12 +413,12 @@ for i, imm in tqdm(enumerate(source_data), desc=f'Output video ',total=nframes):
         labelfile_rescale.close()
 
     # output video
-    img_output = img_output[0].cpu().detach().numpy()
-    img_output = np.transpose(img_output, (1, 2, 0))
-    img_output = 255 * img_output # Now scale by 255
-    img_output = img_output.astype(np.uint8)
-    video_writer.append_data(img_output)
-video_writer.close()
+#     img_output = img_output[0].cpu().detach().numpy()
+#     img_output = np.transpose(img_output, (1, 2, 0))
+#     img_output = 255 * img_output # Now scale by 255
+#     img_output = img_output.astype(np.uint8)
+#     video_writer.append_data(img_output)
+# video_writer.close()
 # 
 # st()
 # MAP
