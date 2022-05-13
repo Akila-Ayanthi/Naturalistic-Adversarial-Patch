@@ -191,7 +191,7 @@ elif(source_key == 1):
         for filename in files:
             # filename = os.path.join(path, name)
             if(filename.endswith('.jpg') or filename.endswith('.png') ):
-                image = imageio.imread(source_folder+filename)
+                image = imageio.imread(path+filename)
                 images.append(image)
                 filenames.append(filename[:-4])
     # number of frames
