@@ -188,9 +188,10 @@ elif(source_key == 1):
     filenames = []
     # for filename in os.listdir(source_folder):
     for path, subdirs, files in os.walk(source_folder):
+        print(subdirs)
         for filename in files:
             if(filename.endswith('.jpg') or filename.endswith('.png') ):
-                print(path+'/'+filename)
+                # print(path+'/'+filename)
                 image = imageio.imread(path+'/'+filename)
                 images.append(image)
                 filenames.append(filename[:-4])
