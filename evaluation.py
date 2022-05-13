@@ -186,9 +186,10 @@ elif(source_key == 1):
     print("Start to read images from folder")
     images = []
     filenames = []
+    
     # for filename in os.listdir(source_folder):
     for path, subdirs, files in os.walk(source_folder):
-        # print(subdirs)
+        subdirs = subdirs
         for filename in files:
             if(filename.endswith('.jpg') or filename.endswith('.png') ):
                 # print(path+'/'+filename)
@@ -202,6 +203,9 @@ elif(source_key == 1):
     output_name = filenames
 finish_r = time.time()
 print('Finish reading images in %f seconds.' % (finish_r - start_r))
+
+for subdir in subdirs:
+    print(subdir)
 
 
 ### -----------------------------------------------------------  Patch  Image  ---------------------------------------------------------------------- ###
