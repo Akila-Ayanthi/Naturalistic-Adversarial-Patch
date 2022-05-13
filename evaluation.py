@@ -75,7 +75,7 @@ fake_images_path = apt1.patch
 # data source
 video_name                 = "WIN_20210113_18_36_46_Pro"     # WIN_20200903_16_52_27_Pro, WIN_20200903_17_17_34_Pro, WIN_20210113_18_36_46_Pro
 video_folder               = "./dataset/video/"
-source_folder              = "./dataset/inria/Test/pos/"    # ../dataset/inria/Train/pos/   ,   ../dataset/inria/Test/pos/
+source_folder              =  "/home/dissana8/LAB/Visor/" #"./dataset/inria/Test/pos/"    # ../dataset/inria/Train/pos/   ,   ../dataset/inria/Test/pos/
 # video or folder
 source_key                 = 1     # 1:inria     0:video
 
@@ -186,11 +186,14 @@ elif(source_key == 1):
     print("Start to read images from folder")
     images = []
     filenames = []
-    for filename in os.listdir(source_folder):
-        if(filename.endswith('.jpg') or filename.endswith('.png') ):
-            image = imageio.imread(source_folder+filename)
-            images.append(image)
-            filenames.append(filename[:-4])
+    # for filename in os.listdir(source_folder):
+    for path, subdirs, files in os.walk(source_folder):
+        for name in files:
+            filename = os.path.join(path, name)
+            if(filename.endswith('.jpg') or filename.endswith('.png') ):
+                image = imageio.imread(source_folder+filename)
+                images.append(image)
+                filenames.append(filename[:-4])
     # number of frames
     nframes     = len(images)
     source_data = images
