@@ -187,6 +187,7 @@ elif(source_key == 1):
     images = []
     filenames = []
     for filename in os.listdir(source_folder):
+        print(filename)
         if(filename.endswith('.jpg') or filename.endswith('.png') ):
             print(source_folder+filename)
             image = imageio.imread(source_folder+filename)
