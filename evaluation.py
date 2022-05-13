@@ -195,8 +195,7 @@ elif(source_key == 1):
                 image = imageio.imread(path+'/'+filename)
                 images.append(image)
                 subdir = path.split('/')[6]
-                print(subdir)
-                filenames.append(filename[:-4])
+                filenames.append(subdir+'/'+filename[:-4])
     # number of frames
     nframes     = len(images)
     source_data = images
@@ -402,6 +401,7 @@ for i, imm in tqdm(enumerate(source_data), desc=f'Output video ',total=nframes):
     # output data
     if(enable_output_data):
         # save clear imgs
+        print(iname)
         output_path = str(output_imgs_foler)+'%s.png' % (iname)
         save_image(img_output, output_path)
         # save bbox
