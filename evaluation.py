@@ -410,18 +410,18 @@ for i, imm in tqdm(enumerate(source_data), desc=f'Output video ',total=nframes):
         output_path = str(output_imgs_foler)+'%s.png' % (iname)
         save_image(img_output, output_path)
         # save bbox
-        output_path = str(output_labels_foler)+'%s.txt' % (iname)
-        np.savetxt(output_path, labels, fmt='%.6f')
-    if(enable_output_data):
-        # save recale bbox
-        output_path = outout_labelRescale_folder + iname + ".txt"
-        labelfile_rescale = open(output_path,'w+') #read label
-        for bbox in labels_rescale:
-            if(output_data_type == "Train"):
-                labelfile_rescale.write("person" + str(f' {bbox[2]} {bbox[3]} {bbox[4]} {bbox[5]}\n'))            # left, top, right, bottom
-            elif(output_data_type == "Test"):
-                labelfile_rescale.write("person" + str(f' {bbox[1]} {bbox[2]} {bbox[3]} {bbox[4]} {bbox[5]}\n'))  # confendence left, top, right, bottom
-        labelfile_rescale.close()
+        # output_path = str(output_labels_foler)+'%s.txt' % (iname)
+        # np.savetxt(output_path, labels, fmt='%.6f')
+    # if(enable_output_data):
+    #     # save recale bbox
+    #     output_path = outout_labelRescale_folder + iname + ".txt"
+    #     labelfile_rescale = open(output_path,'w+') #read label
+    #     for bbox in labels_rescale:
+    #         if(output_data_type == "Train"):
+    #             labelfile_rescale.write("person" + str(f' {bbox[2]} {bbox[3]} {bbox[4]} {bbox[5]}\n'))            # left, top, right, bottom
+    #         elif(output_data_type == "Test"):
+    #             labelfile_rescale.write("person" + str(f' {bbox[1]} {bbox[2]} {bbox[3]} {bbox[4]} {bbox[5]}\n'))  # confendence left, top, right, bottom
+    #     labelfile_rescale.close()
 
     # output video
 #     img_output = img_output[0].cpu().detach().numpy()
