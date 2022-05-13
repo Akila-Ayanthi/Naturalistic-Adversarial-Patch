@@ -193,7 +193,7 @@ elif(source_key == 1):
             print(filename)
             # filename = os.path.join(path, name)
             if(filename.endswith('.jpg') or filename.endswith('.png') ):
-                image = imageio.imread(path+filename)
+                image = imageio.imread(path+'/'+filename)
                 images.append(image)
                 filenames.append(filename[:-4])
     # number of frames
