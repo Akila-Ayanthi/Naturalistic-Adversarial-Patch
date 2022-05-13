@@ -186,13 +186,14 @@ elif(source_key == 1):
     print("Start to read images from folder")
     images = []
     filenames = []
-    for filename in os.listdir(source_folder):
-        print(filename)
-        if(filename.endswith('.jpg') or filename.endswith('.png') ):
-            print(source_folder+filename)
-            image = imageio.imread(source_folder+filename)
-            images.append(image)
-            filenames.append(filename[:-4])
+    # for filename in os.listdir(source_folder):
+    for path, subdirs, files in os.walk(source_folder):
+        for filename in files:
+            if(filename.endswith('.jpg') or filename.endswith('.png') ):
+                print(path+'/'+filename)
+                image = imageio.imread(path+'/'+filename)
+                images.append(image)
+                filenames.append(filename[:-4])
     # number of frames
     nframes     = len(images)
     source_data = images
