@@ -406,7 +406,7 @@ for i, imm in tqdm(enumerate(source_data), desc=f'Output video ',total=nframes):
     # output data
     if(enable_output_data):
         # save clear imgs
-        output_path = str(output_imgs_foler)+'%s.png' % (iname)
+        output_path = str(output_imgs_foler)+'%s.jpg' % (iname)
         save_image(img_output, output_path)
         # save bbox
         # output_path = str(output_labels_foler)+'%s.txt' % (iname)
