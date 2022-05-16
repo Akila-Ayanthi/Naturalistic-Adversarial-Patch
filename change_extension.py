@@ -7,9 +7,10 @@ for path, subdirs, files in os.walk(root):
         print(os.path.join(path, name))
         if name.endswith(".png"):
             im = Image.open(os.path.join(path, name))
-            name=name.split('.')[0] + '.jpg'
+            name_=name.split('.')[0] + '.jpg'
             rgb_im = im.convert('RGB')
-            rgb_im.save(os.path.join(path, name))
+            rgb_im.save(os.path.join(path, name_))
+            os.remove(os.path.join(path, name))
             # c+=1
             # print(os.path.join(directory, filename))
             continue
