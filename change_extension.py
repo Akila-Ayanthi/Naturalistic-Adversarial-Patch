@@ -1,7 +1,7 @@
 from PIL import Image
 import os
 
-root = "/home/dissana8/Naturalistic-Adversarial-Patch/eval_output/LAB_0.2/"
+root = "/home/dissana8/Naturalistic-Adversarial-Patch/eval_output/LAB/"
 for path, subdirs, files in os.walk(root):
     for name in files:
         print(os.path.join(path, name))
