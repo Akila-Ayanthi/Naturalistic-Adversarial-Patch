@@ -76,7 +76,7 @@ fake_images_path = apt1.patch
 # data source
 video_name                 = "WIN_20210113_18_36_46_Pro"     # WIN_20200903_16_52_27_Pro, WIN_20200903_17_17_34_Pro, WIN_20210113_18_36_46_Pro
 video_folder               = "./dataset/video/"
-source_folder              =  "/home/dissana8/LAB/Visor/cam3/" #"./dataset/inria/Test/pos/"    # ../dataset/inria/Train/pos/   ,   ../dataset/inria/Test/pos/
+source_folder              =  "/home/dissana8/LAB/Visor/cam4/" #"./dataset/inria/Test/pos/"    # ../dataset/inria/Train/pos/   ,   ../dataset/inria/Test/pos/
 # video or folder
 source_key                 = 1     # 1:inria     0:video
 
@@ -99,7 +99,7 @@ else:
 # st()
 # output path
 output_video_name          = "video_output"
-output_folder              = "eval_output/LAB_Daedalus_yolov4_0.1/cam3/"
+output_folder              = "eval_output/LAB_Daedalus_yolov4_0.1/cam4/"
 output_video_foler         = output_folder + "video/"
 output_imgs_foler          = output_folder #output_folder + "output_imgs/"
 output_labels_foler        = output_folder + "output_imgs/yolo-labels/"
