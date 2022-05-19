@@ -64,7 +64,7 @@ enable_no_random           = True            # NOT randon patch "light and shado
 enable_check_patch         = False           # check input patch by human
 # patch
 cls_id_attacked            = 0               # ID of the object to which the patch is posted
-patch_scale                = 0.1            # patch size
+patch_scale                = 0.2            # patch size
 max_labels_per_img         = 14              # maximum number of objects per image
 patch_mode                 = 0               # options: 0(patch), 1(white), 2(gray), 3(randon)
 # fake_images_path           = "../adversarial-attack-ensemble/patch_sample/3output.png"
@@ -76,7 +76,7 @@ fake_images_path = apt1.patch
 # data source
 video_name                 = "WIN_20210113_18_36_46_Pro"     # WIN_20200903_16_52_27_Pro, WIN_20200903_17_17_34_Pro, WIN_20210113_18_36_46_Pro
 video_folder               = "./dataset/video/"
-source_folder              =  "/home/dissana8/LAB/Visor/cam4/" #"./dataset/inria/Test/pos/"    # ../dataset/inria/Train/pos/   ,   ../dataset/inria/Test/pos/
+source_folder              =  "/home/dissana8/LAB/Visor/cam1/" #"./dataset/inria/Test/pos/"    # ../dataset/inria/Train/pos/   ,   ../dataset/inria/Test/pos/
 # video or folder
 source_key                 = 1     # 1:inria     0:video
 
@@ -99,7 +99,7 @@ else:
 # st()
 # output path
 output_video_name          = "video_output"
-output_folder              = "eval_output/LAB_Daedalus_yolov4_0.1/cam4/"
+output_folder              = "eval_output/LAB_Daedalus_yolov4_0.2/cam1/"
 output_video_foler         = output_folder + "video/"
 output_imgs_foler          = output_folder #output_folder + "output_imgs/"
 output_labels_foler        = output_folder + "output_imgs/yolo-labels/"
