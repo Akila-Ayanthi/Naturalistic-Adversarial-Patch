@@ -99,7 +99,7 @@ else:
 # st()
 # output path
 output_video_name          = "video_output"
-output_folder              = "eval_output/LAB_adYolo_yolov3_0.1/cam1/"
+output_folder              = "eval_output/LAB_adYolo_yolov3_0.2/cam1/"
 output_video_foler         = output_folder + "video/"
 output_imgs_foler          = output_folder #output_folder + "output_imgs/"
 output_labels_foler        = output_folder + "output_imgs/yolo-labels/"
